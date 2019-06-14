@@ -2,20 +2,24 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="525650" started-at="2019-06-14T04:59:09Z" finished-at="2019-06-14T05:07:55Z">
+  <suite name="Default suite" duration-ms="79133" started-at="2019-06-14T11:10:03Z" finished-at="2019-06-14T11:11:22Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="525650" started-at="2019-06-14T04:59:09Z" finished-at="2019-06-14T05:07:55Z">
+    <test name="Default test" duration-ms="79133" started-at="2019-06-14T11:10:03Z" finished-at="2019-06-14T11:11:22Z">
       <class name="AppiumSelenium.com.AppiumSelenium.AppForYjzx">
-        <test-method status="PASS" signature="globalSetup()[pri:0, instance:AppiumSelenium.com.AppiumSelenium.AppForYjzx@3fee9989]" name="globalSetup" is-config="true" duration-ms="8190" started-at="2019-06-14T12:59:01Z" finished-at="2019-06-14T12:59:09Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:AppiumSelenium.com.AppiumSelenium.AppForYjzx@185d8b6]" name="beforeSuite" is-config="true" duration-ms="805" started-at="2019-06-14T19:09:36Z" finished-at="2019-06-14T19:09:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method status="PASS" signature="globalSetup()[pri:0, instance:AppiumSelenium.com.AppiumSelenium.AppForYjzx@185d8b6]" name="globalSetup" is-config="true" duration-ms="26165" started-at="2019-06-14T19:09:36Z" depends-on-methods="base.TestBase.beforeSuite" finished-at="2019-06-14T19:10:03Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- globalSetup -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:AppiumSelenium.com.AppiumSelenium.AppForYjzx@3fee9989]" name="setUp" is-config="true" duration-ms="16923" started-at="2019-06-14T12:59:09Z" finished-at="2019-06-14T12:59:26Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:AppiumSelenium.com.AppiumSelenium.AppForYjzx@185d8b6]" name="setUp" is-config="true" duration-ms="41021" started-at="2019-06-14T19:10:03Z" finished-at="2019-06-14T19:10:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="loginWithMicroBlog()[pri:0, instance:AppiumSelenium.com.AppiumSelenium.AppForYjzx@3fee9989]" name="loginWithMicroBlog" duration-ms="507964" started-at="2019-06-14T12:59:26Z" finished-at="2019-06-14T13:07:54Z">
+        <test-method status="FAIL" signature="loginWithMicroBlog()[pri:0, instance:AppiumSelenium.com.AppiumSelenium.AppForYjzx@185d8b6]" name="loginWithMicroBlog" duration-ms="36649" started-at="2019-06-14T19:10:44Z" finished-at="2019-06-14T19:11:20Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
               <![CDATA[An element could not be located on the page using the given search parameters.
@@ -24,8 +28,8 @@ Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25
 System info: host: 'EDZ-20170729POB', ip: '192.168.1.95', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_144'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appActivity: .ui.WelcomeActivity, appPackage: cn.cert.financial, automationName: UiAutomator2, databaseEnabled: false, desired: {appActivity: .ui.WelcomeActivity, appPackage: cn.cert.financial, automationName: UiAutomator2, deviceName: 4d155fc5, platformName: android, platformVersion: 8.0.0}, deviceApiLevel: 26, deviceManufacturer: samsung, deviceModel: SM-G9350, deviceName: 4d155fc5, deviceScreenDensity: 480, deviceScreenSize: 1080x1920, deviceUDID: 4d155fc5, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 3, platform: LINUX, platformName: Android, platformVersion: 8.0.0, statBarHeight: 72, takesScreenshot: true, viewportRect: {height: 1848, left: 0, top: 72, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: b2be13b6-b1ef-4430-a48f-4fc2434b9f08
-*** Element info: {Using=id, value=cn.cert.financial:id/iv_back}]]>
+Session ID: 6cf092b6-6d72-4c6a-991e-f84f02d470a9
+*** Element info: {Using=id, value=cn.cert.financial:id/tv_checkXQ}]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.NoSuchElementException: An element could not be located on the page using the given search parameters.
@@ -34,8 +38,8 @@ Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:25
 System info: host: 'EDZ-20170729POB', ip: '192.168.1.95', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_144'
 Driver info: io.appium.java_client.android.AndroidDriver
 Capabilities {appActivity: .ui.WelcomeActivity, appPackage: cn.cert.financial, automationName: UiAutomator2, databaseEnabled: false, desired: {appActivity: .ui.WelcomeActivity, appPackage: cn.cert.financial, automationName: UiAutomator2, deviceName: 4d155fc5, platformName: android, platformVersion: 8.0.0}, deviceApiLevel: 26, deviceManufacturer: samsung, deviceModel: SM-G9350, deviceName: 4d155fc5, deviceScreenDensity: 480, deviceScreenSize: 1080x1920, deviceUDID: 4d155fc5, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 3, platform: LINUX, platformName: Android, platformVersion: 8.0.0, statBarHeight: 72, takesScreenshot: true, viewportRect: {height: 1848, left: 0, top: 72, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: b2be13b6-b1ef-4430-a48f-4fc2434b9f08
-*** Element info: {Using=id, value=cn.cert.financial:id/iv_back}
+Session ID: 6cf092b6-6d72-4c6a-991e-f84f02d470a9
+*** Element info: {Using=id, value=cn.cert.financial:id/tv_checkXQ}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -89,14 +93,18 @@ Session ID: b2be13b6-b1ef-4430-a48f-4fc2434b9f08
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginWithMicroBlog -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:AppiumSelenium.com.AppiumSelenium.AppForYjzx@3fee9989]" name="tearDown" is-config="true" duration-ms="733" started-at="2019-06-14T13:07:54Z" finished-at="2019-06-14T13:07:55Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:AppiumSelenium.com.AppiumSelenium.AppForYjzx@185d8b6]" name="tearDown" is-config="true" duration-ms="1390" started-at="2019-06-14T19:11:20Z" finished-at="2019-06-14T19:11:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="globalTearDown()[pri:0, instance:AppiumSelenium.com.AppiumSelenium.AppForYjzx@3fee9989]" name="globalTearDown" is-config="true" duration-ms="51" started-at="2019-06-14T13:07:55Z" finished-at="2019-06-14T13:07:55Z">
+        <test-method status="PASS" signature="globalTearDown()[pri:0, instance:AppiumSelenium.com.AppiumSelenium.AppForYjzx@185d8b6]" name="globalTearDown" is-config="true" duration-ms="56" started-at="2019-06-14T19:11:22Z" finished-at="2019-06-14T19:11:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- globalTearDown -->
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:AppiumSelenium.com.AppiumSelenium.AppForYjzx@185d8b6]" name="afterSuite" is-config="true" duration-ms="954" started-at="2019-06-14T19:11:22Z" depends-on-methods="base.MobileSingle.globalTearDown" finished-at="2019-06-14T19:11:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
       </class> <!-- AppiumSelenium.com.AppiumSelenium.AppForYjzx -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

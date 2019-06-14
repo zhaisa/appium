@@ -6,9 +6,11 @@
       <class name="AppiumSelenium.com.AppiumSelenium.AppForYjzx">
         <methods>
           <include name="loginWithMicroBlog"/>
-          <include name="globalSetup"/>
           <include name="setUp"/>
+          <include name="globalSetup"/>
+          <include name="afterSuite"/>
           <include name="globalTearDown"/>
+          <include name="beforeSuite"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- AppiumSelenium.com.AppiumSelenium.AppForYjzx -->

@@ -2,8 +2,8 @@ package AppiumSelenium.com.AppiumSelenium;
 
 import java.net.URL;
 import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
@@ -11,6 +11,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import base.MobileSingle;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.WaitOptions;
@@ -20,24 +21,22 @@ import io.appium.java_client.touch.offset.PointOption;
  * 
  *
  */
-public class AppForYjzx extends BaseTest {
+public class AppForYjzx extends MobileSingle  {
 	private AndroidDriver<WebElement> driver;
-
 	@BeforeClass
 	public void setUp() throws Exception {
 		// 启动appium
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", "4d155fc5"); // 00617f9c0704
-		capabilities.setCapability("automationName", "UiAutomator2");//这是跑通的关键点
+		capabilities.setCapability("automationName", "UiAutomator2");// 这是跑通的关键点
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("platformVersion", "8.0.0");
 		// 配置测试apk
 		capabilities.setCapability("appPackage", "cn.cert.financial");
 		capabilities.setCapability("appActivity", ".ui.WelcomeActivity");
-		driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);//这也是
+		driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);// 这也是
 
 	}
-
 	@Test
 	public void loginWithMicroBlog() throws InterruptedException {
 		String activity = driver.currentActivity();
@@ -72,39 +71,43 @@ public class AppForYjzx extends BaseTest {
 		driver.findElementById("cn.cert.financial:id/tv_login").click();
 		Thread.sleep(2000);
 		//这是个bug，可能会登录失败，然后从新登录一遍
-		driver.findElementById("cn.cert.financial:id/phone_tv").click();		
-		Thread.sleep(1000);
-		driver.findElementById("cn.cert.financial:id/et_phone").clear();;
-		driver.findElementById("cn.cert.financial:id/et_phone").sendKeys("15321612750");
-		driver.findElementById("cn.cert.financial:id/et_psw").clear();
-		driver.findElementById("cn.cert.financial:id/et_psw").sendKeys("qweasd123");  
-		driver.findElementById("cn.cert.financial:id/tv_login").click();
-		Thread.sleep(2000);
+//		driver.findElementById("cn.cert.financial:id/phone_tv").click();		
+//		Thread.sleep(1000);
+//		driver.findElementById("cn.cert.financial:id/et_phone").clear();;
+//		driver.findElementById("cn.cert.financial:id/et_phone").sendKeys("15321612750");
+//		driver.findElementById("cn.cert.financial:id/et_psw").clear();
+//		driver.findElementById("cn.cert.financial:id/et_psw").sendKeys("qweasd123");  
+//		driver.findElementById("cn.cert.financial:id/tv_login").click();
+//		Thread.sleep(2000);
 		driver.findElementById("cn.cert.financial:id/tv_tab1").click();
 		
 		Thread.sleep(1000);
 		TouchAction ta1 = new TouchAction(driver);
 		ta1.tap(PointOption.point(900,760)).release().perform();
-
+		Thread.sleep(1000);
+		driver.navigate().back();
+		Thread.sleep(2000);
+		ta1.tap(PointOption.point(900,760)).release().perform();
 		Thread.sleep(2000);
 		driver.findElementById("cn.cert.financial:id/tv_checkXQ").click();
 
 		//".ui.main.MainActivity
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		driver.findElementById("cn.cert.financial:id/iv_back").click();
-		// driver.navigate().back();
+	
 		Thread.sleep(1000);
 		for (int i = 0; i < 1000; i++) {
 			driver.findElementById("cn.cert.financial:id/tv_checkXQ").click();
-			Thread.sleep(1500);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.findElementById("cn.cert.financial:id/iv_back").click();
-			Thread.sleep(1500);
+			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			System.out.println(i);
 		}
 	}
 
 	@AfterClass
 	public void tearDown() throws Exception {
 
-	driver.quit();
+		driver.quit();
 	}
 }
