@@ -17,7 +17,7 @@ import io.appium.java_client.touch.WaitOptions;
 import io.appium.java_client.touch.offset.PointOption;
 
 /**
- * 由于activity 权限被限制（研发不让改成android:exported=true）,导致app被拒绝访问
+ * 
  *
  */
 public class AppForYjzx extends BaseTest {
@@ -28,17 +28,13 @@ public class AppForYjzx extends BaseTest {
 		// 启动appium
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("deviceName", "4d155fc5"); // 00617f9c0704
-		capabilities.setCapability("automationName", "UiAutomator2");
+		capabilities.setCapability("automationName", "UiAutomator2");//这是跑通的关键点
 		capabilities.setCapability("platformName", "Android");
 		capabilities.setCapability("platformVersion", "8.0.0");
 		// 配置测试apk
 		capabilities.setCapability("appPackage", "cn.cert.financial");
 		capabilities.setCapability("appActivity", ".ui.WelcomeActivity");
-		// capabilities.setCapability("sessionOverride", true); //
-		// 每次启动时覆盖session，否则第二次后运行会报错不能新建session
-		// capabilities.setCapability("unicodeKeyboard", true); // 设置键盘
-		// capabilities.setCapability("resetKeyboard", true); // 设置默认键盘为appium的键盘 ,支持中文
-		driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);
+		driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"),capabilities);//这也是
 
 	}
 
@@ -58,7 +54,7 @@ public class AppForYjzx extends BaseTest {
 				.moveTo(PointOption.point(x*1/6,y/2)).release().perform();
 		Thread.sleep(2000);
 		driver.findElementById("cn.cert.financial:id/tv_enter").click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElementById("cn.cert.financial:id/tv_agreee").click();
 		Thread.sleep(1000);
 		driver.findElementById("cn.cert.financial:id/iv_cancel").click();
@@ -70,38 +66,33 @@ public class AppForYjzx extends BaseTest {
 		driver.findElementById("cn.cert.financial:id/phone_tv").click();		
 		Thread.sleep(1000);
 		driver.findElementById("cn.cert.financial:id/et_phone").clear();
-		driver.findElementById("cn.cert.financial:id/et_phone").sendKeys("18701473018");
+		driver.findElementById("cn.cert.financial:id/et_phone").sendKeys("15321612750");
 		driver.findElementById("cn.cert.financial:id/et_psw").clear();
 		driver.findElementById("cn.cert.financial:id/et_psw").sendKeys("qweasd123");  
 		driver.findElementById("cn.cert.financial:id/tv_login").click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		//这是个bug，可能会登录失败，然后从新登录一遍
 		driver.findElementById("cn.cert.financial:id/phone_tv").click();		
 		Thread.sleep(1000);
-		driver.findElementById("cn.cert.financial:id/et_phone").clear();
-		driver.findElementById("cn.cert.financial:id/et_phone").sendKeys("18701473018");
+		driver.findElementById("cn.cert.financial:id/et_phone").clear();;
+		driver.findElementById("cn.cert.financial:id/et_phone").sendKeys("15321612750");
 		driver.findElementById("cn.cert.financial:id/et_psw").clear();
 		driver.findElementById("cn.cert.financial:id/et_psw").sendKeys("qweasd123");  
 		driver.findElementById("cn.cert.financial:id/tv_login").click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		driver.findElementById("cn.cert.financial:id/tv_tab1").click();
 		
 		Thread.sleep(1000);
-//		WebElement eee=driver.findElementById("cn.cert.financial:id/iv_verify");
-		//cn.cert.financial:id/iv_verify
- //cn.cert.financial:id/ll_entercom
-		
-
 		TouchAction ta1 = new TouchAction(driver);
 		ta1.tap(PointOption.point(900,760)).release().perform();
 
-		Thread.sleep(5000);
-//		driver.findElementById("cn.cert.financial:id/tv_checkXQ").click();
-		driver.findElementByClassName("android.widget.FrameLayout").findElement(By.id("cn.cert.financial:id/tv_checkXQ")).click();
+		Thread.sleep(2000);
+		driver.findElementById("cn.cert.financial:id/tv_checkXQ").click();
+
 		//".ui.main.MainActivity
 		Thread.sleep(1000);
 		driver.findElementById("cn.cert.financial:id/iv_back").click();
-//		driver.navigate().back();
+		// driver.navigate().back();
 		Thread.sleep(1000);
 		for (int i = 0; i < 1000; i++) {
 			driver.findElementById("cn.cert.financial:id/tv_checkXQ").click();
