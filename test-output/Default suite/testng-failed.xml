@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="AppiumSelenium.com.AppiumSelenium.App">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="globalSetup"/>
+          <include name="loginWithMicroBlog"/>
+          <include name="globalTearDown"/>
+        </methods>
+      </class> <!-- AppiumSelenium.com.AppiumSelenium.App -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
