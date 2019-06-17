@@ -1,4 +1,4 @@
-package AppiumSelenium.com.AppiumSelenium;
+package testcase;
 
 import java.net.MalformedURLException;
 import java.net.URL;

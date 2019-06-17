@@ -1,4 +1,4 @@
-package AppiumSelenium.com.AppiumSelenium;
+package testcase;
 
 import java.io.IOException;
 import java.net.URL;

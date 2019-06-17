@@ -3,11 +3,13 @@ package base;
 import java.util.List;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.asserts.Assertion;
 import org.testng.asserts.IAssert;
 
+import io.appium.java_client.android.AndroidDriver;
 import myutil.Screenshot;
 
 /**
@@ -21,9 +23,9 @@ public class AssertPoint extends Assertion {
 	private int flag = 0;// 定义一个失败的计数器，如果flag>0就证明测试运行结果是失败的
 	private String caseName = "";// 定义一个用例名称的变量
 	public static String screenName = "";// 这个是失败截图生成后的截图名称，往Extent报告页面中嵌的时候会用，方法是在ExecutionListener类中调用
-	private WebDriver driver = null;
+	private AndroidDriver<WebElement> driver = null;
 	
-	public AssertPoint(String caseName, WebDriver driver) {
+	public AssertPoint(String caseName, AndroidDriver<WebElement> driver) {
 		this.caseName = caseName;
 		this.driver = driver;
 	}

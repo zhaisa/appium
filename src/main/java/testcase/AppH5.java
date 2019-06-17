@@ -1,4 +1,4 @@
-package AppiumSelenium.com.AppiumSelenium;
+package testcase;
 /*
  * 
  * 直接使用chrome定位即可

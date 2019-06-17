@@ -21,13 +21,15 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
  */
 public class MobileSingle extends TestBase {
 
-	private AndroidDriver<WebElement> driver;
-	private static AppiumDriverLocalService service;
+	protected AndroidDriver<WebElement> driver;
+	protected static AppiumDriverLocalService service;
+	protected AssertPoint ap;
 
 	@BeforeSuite
 	public void globalSetup() throws IOException {
 		service = AppiumDriverLocalService.buildDefaultService();
 		service.start();
+		ap = new AssertPoint(this.getClass().getSimpleName(), driver);
 	}
 
 	@AfterSuite
@@ -38,8 +40,26 @@ public class MobileSingle extends TestBase {
 	public URL getServiceUrl() {
 		return service.getUrl();
 	}
+	@BeforeClass
+	public void setUp() throws Exception {
+		// 启动appium
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability("deviceName", "4d155fc5"); // 00617f9c0704
+		capabilities.setCapability("automationName", "UiAutomator2");// 这是跑通的关键点
+		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("platformVersion", "8.0.0");
+		// 配置测试apk
+		capabilities.setCapability("appPackage", "com.rongbei");//cn.cert.financial 上报app包
+		capabilities.setCapability("appActivity", ".ui.activity.StartUpAct");//上报app的activ .ui.WelcomeActivity
+		driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);// 这也是
 
-	
+	}
+
+	@AfterClass
+	public void tearDown() throws Exception {
+
+		driver.quit();
+	}
 
 	
 	

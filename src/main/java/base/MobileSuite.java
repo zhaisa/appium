@@ -27,11 +27,12 @@ public class MobileSuite extends TestBase {
 	private static AppiumDriverLocalService service;
 	private AndroidDriver<WebElement> driver;
 	public static List<String> resultLog = new ArrayList<String>();// 各case中调用此方法，会将测试结果信息存入这个list中，方便测试报告、测试邮件等使用
-
+	protected AssertPoint ap;
 	@BeforeSuite
 	public void globalSetup() throws IOException {
 		service = AppiumDriverLocalService.buildDefaultService();
 		service.start();
+		ap = new AssertPoint(this.getClass().getSimpleName(), driver);
 	}
 
 	@AfterSuite

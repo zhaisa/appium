@@ -1,4 +1,4 @@
-package AppiumSelenium.com.AppiumSelenium;
+package testcase;
 
 import java.net.URL;
 import java.time.Duration;
@@ -23,20 +23,7 @@ import io.appium.java_client.touch.offset.PointOption;
  */
 public class AppForYjzx extends MobileSingle  {
 	private AndroidDriver<WebElement> driver;
-	@BeforeClass
-	public void setUp() throws Exception {
-		// 启动appium
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("deviceName", "4d155fc5"); // 00617f9c0704
-		capabilities.setCapability("automationName", "UiAutomator2");// 这是跑通的关键点
-		capabilities.setCapability("platformName", "Android");
-		capabilities.setCapability("platformVersion", "8.0.0");
-		// 配置测试apk
-		capabilities.setCapability("appPackage", "cn.cert.financial");
-		capabilities.setCapability("appActivity", ".ui.WelcomeActivity");
-		driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);// 这也是
 
-	}
 	@Test
 	public void loginWithMicroBlog() throws InterruptedException {
 		String activity = driver.currentActivity();
@@ -69,16 +56,18 @@ public class AppForYjzx extends MobileSingle  {
 		driver.findElementById("cn.cert.financial:id/et_psw").clear();
 		driver.findElementById("cn.cert.financial:id/et_psw").sendKeys("qweasd123");  
 		driver.findElementById("cn.cert.financial:id/tv_login").click();
+		Thread.sleep(3000);
+//		这里有个登录的bug,需要重复登录一遍
+		driver.findElementById("cn.cert.financial:id/phone_tv").click();		
+		Thread.sleep(1000);
+		driver.findElementById("cn.cert.financial:id/et_phone").clear();;
+		driver.findElementById("cn.cert.financial:id/et_phone").sendKeys("15321612750");
+		driver.findElementById("cn.cert.financial:id/et_psw").clear();
+		driver.findElementById("cn.cert.financial:id/et_psw").sendKeys("qweasd123");  
+		driver.findElementById("cn.cert.financial:id/tv_login").click();
 		Thread.sleep(2000);
-		//这是个bug，可能会登录失败，然后从新登录一遍
-//		driver.findElementById("cn.cert.financial:id/phone_tv").click();		
-//		Thread.sleep(1000);
-//		driver.findElementById("cn.cert.financial:id/et_phone").clear();;
-//		driver.findElementById("cn.cert.financial:id/et_phone").sendKeys("15321612750");
-//		driver.findElementById("cn.cert.financial:id/et_psw").clear();
-//		driver.findElementById("cn.cert.financial:id/et_psw").sendKeys("qweasd123");  
-//		driver.findElementById("cn.cert.financial:id/tv_login").click();
-//		Thread.sleep(2000);
+		ap.equals(driver.findElementById("cn.cert.financial:id/phone_tv").getText(), "153****2750", "登录成功");
+		Thread.sleep(2000);
 		driver.findElementById("cn.cert.financial:id/tv_tab1").click();
 		
 		Thread.sleep(1000);
@@ -89,6 +78,7 @@ public class AppForYjzx extends MobileSingle  {
 		Thread.sleep(2000);
 		ta1.tap(PointOption.point(900,760)).release().perform();
 		Thread.sleep(2000);
+
 		driver.findElementById("cn.cert.financial:id/tv_checkXQ").click();
 
 		//".ui.main.MainActivity
@@ -96,7 +86,7 @@ public class AppForYjzx extends MobileSingle  {
 		driver.findElementById("cn.cert.financial:id/iv_back").click();
 	
 		Thread.sleep(1000);
-		for (int i = 0; i < 1000; i++) {
+		for (int i = 0; i < 100; i++) {
 			driver.findElementById("cn.cert.financial:id/tv_checkXQ").click();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.findElementById("cn.cert.financial:id/iv_back").click();
@@ -105,9 +95,5 @@ public class AppForYjzx extends MobileSingle  {
 		}
 	}
 
-	@AfterClass
-	public void tearDown() throws Exception {
-
-		driver.quit();
-	}
+	
 }
