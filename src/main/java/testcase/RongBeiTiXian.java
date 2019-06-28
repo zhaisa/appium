@@ -68,6 +68,7 @@ public class RongBeiTiXian {
 			System.out.println(context);
 		}
 //		driver.context((String) contexts.toArray()[2]);
+		//切换到融贝的webview,关于webview可以查看手机开发这选项，webview版本，然后去找对应的driver下载，应用h5测试
 		driver.context("WEBVIEW_com.rongbei");
 		
 
