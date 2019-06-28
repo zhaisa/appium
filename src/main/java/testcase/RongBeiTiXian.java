@@ -5,7 +5,6 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterClass;
@@ -71,11 +70,10 @@ public class RongBeiTiXian {
 //		driver.context((String) contexts.toArray()[2]);
 		driver.context("WEBVIEW_com.rongbei");
 		
-//		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+
 		Thread.sleep(3000);
-		// driver.findElement(By.id("inputArea"));
 		driver.findElementByClassName("msgFont").click();
-	//	driver.findElementById("SMS_CODE").clear();
+
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("请输入验证码：");
