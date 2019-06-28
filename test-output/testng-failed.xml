@@ -3,17 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="testcase.AppForRongBei">
+      <class name="testcase.RongBeiTiXian">
         <methods>
-          <include name="loginRongBei"/>
-          <include name="globalSetup"/>
-          <include name="afterSuite"/>
-          <include name="globalTearDown"/>
-          <include name="setUp"/>
-          <include name="beforeSuite"/>
+          <include name="Recharge"/>
           <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- testcase.AppForRongBei -->
+      </class> <!-- testcase.RongBeiTiXian -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

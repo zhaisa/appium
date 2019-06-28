@@ -21,9 +21,26 @@ import io.appium.java_client.touch.offset.PointOption;
  * 
  *
  */
-public class AppForYjzx extends MobileSingle  {
+public class AndroidForYjzx extends BaseTest  {
 	private AndroidDriver<WebElement> driver;
+	@BeforeClass
+	public void setUp() throws Exception {
+		// 启动appium
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability("deviceName", "4d155fc5"); // 00617f9c0704
+		capabilities.setCapability("automationName", "UiAutomator2");// 这是跑通的关键点
+		capabilities.setCapability("platformName", "Android");
+		capabilities.setCapability("platformVersion", "8.0.0");
+		// 配置测试apk
+		capabilities.setCapability("appPackage", "cn.cert.financial");//cn.cert.financial 上报app包//com.rongbei
+		capabilities.setCapability("appActivity", ".ui.WelcomeActivity");//上报app的activ .ui.WelcomeActivity//.ui.activity.StartUpAct
+		driver = new AndroidDriver<WebElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);// 这也是
 
+	}
+
+
+
+	
 	@Test
 	public void loginWithMicroBlog() throws InterruptedException {
 		String activity = driver.currentActivity();
@@ -66,7 +83,7 @@ public class AppForYjzx extends MobileSingle  {
 		driver.findElementById("cn.cert.financial:id/et_psw").sendKeys("qweasd123");  
 		driver.findElementById("cn.cert.financial:id/tv_login").click();
 		Thread.sleep(2000);
-		ap.equals(driver.findElementById("cn.cert.financial:id/phone_tv").getText(), "153****2750", "登录成功");
+//		ap.equals(driver.findElementById("cn.cert.financial:id/phone_tv").getText(), "153****2750", "登录成功");
 		Thread.sleep(2000);
 		driver.findElementById("cn.cert.financial:id/tv_tab1").click();
 		
@@ -86,7 +103,7 @@ public class AppForYjzx extends MobileSingle  {
 		driver.findElementById("cn.cert.financial:id/iv_back").click();
 	
 		Thread.sleep(1000);
-		for (int i = 0; i < 100; i++) {
+		for (int i = 0; i < 3000; i++) {
 			driver.findElementById("cn.cert.financial:id/tv_checkXQ").click();
 			driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			driver.findElementById("cn.cert.financial:id/iv_back").click();
@@ -94,6 +111,10 @@ public class AppForYjzx extends MobileSingle  {
 			System.out.println(i);
 		}
 	}
+	@AfterClass
+	public void tearDown() throws Exception {
 
+		driver.quit();
+	}
 	
 }

@@ -2,40 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="48935" started-at="2019-06-18T09:41:38Z" finished-at="2019-06-18T09:42:27Z">
+  <suite name="Default suite" duration-ms="86971" started-at="2019-06-28T08:10:08Z" finished-at="2019-06-28T08:11:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="48935" started-at="2019-06-18T09:41:38Z" finished-at="2019-06-18T09:42:27Z">
-      <class name="testcase.AppForRongBei">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:testcase.AppForRongBei@185d8b6]" name="beforeSuite" is-config="true" duration-ms="286" started-at="2019-06-18T17:41:30Z" finished-at="2019-06-18T17:41:30Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="globalSetup()[pri:0, instance:testcase.AppForRongBei@185d8b6]" name="globalSetup" is-config="true" duration-ms="8505" started-at="2019-06-18T17:41:30Z" depends-on-methods="base.TestBase.beforeSuite" finished-at="2019-06-18T17:41:38Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- globalSetup -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:testcase.AppForRongBei@185d8b6]" name="setUp" is-config="true" duration-ms="17818" started-at="2019-06-18T17:41:38Z" finished-at="2019-06-18T17:41:56Z">
+    <test name="Default test" duration-ms="86971" started-at="2019-06-28T08:10:08Z" finished-at="2019-06-28T08:11:35Z">
+      <class name="testcase.RongBeiTiXian">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:testcase.RongBeiTiXian@71423665]" name="setUp" is-config="true" duration-ms="13726" started-at="2019-06-28T16:10:08Z" finished-at="2019-06-28T16:10:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="loginRongBei()[pri:0, instance:testcase.AppForRongBei@185d8b6]" name="loginRongBei" duration-ms="30552" started-at="2019-06-18T17:41:56Z" finished-at="2019-06-18T17:42:27Z">
+        <test-method status="PASS" signature="Recharge()[pri:0, instance:testcase.RongBeiTiXian@71423665]" name="Recharge" duration-ms="72528" started-at="2019-06-28T16:10:22Z" finished-at="2019-06-28T16:11:35Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginRongBei -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcase.AppForRongBei@185d8b6]" name="tearDown" is-config="true" duration-ms="538" started-at="2019-06-18T17:42:27Z" finished-at="2019-06-18T17:42:27Z">
+        </test-method> <!-- Recharge -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:testcase.RongBeiTiXian@71423665]" name="tearDown" is-config="true" duration-ms="691" started-at="2019-06-28T16:11:35Z" finished-at="2019-06-28T16:11:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="globalTearDown()[pri:0, instance:testcase.AppForRongBei@185d8b6]" name="globalTearDown" is-config="true" duration-ms="51" started-at="2019-06-18T17:42:27Z" finished-at="2019-06-18T17:42:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- globalTearDown -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:testcase.AppForRongBei@185d8b6]" name="afterSuite" is-config="true" duration-ms="438" started-at="2019-06-18T17:42:27Z" depends-on-methods="base.MobileSingle.globalTearDown" finished-at="2019-06-18T17:42:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterSuite -->
-      </class> <!-- testcase.AppForRongBei -->
+      </class> <!-- testcase.RongBeiTiXian -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

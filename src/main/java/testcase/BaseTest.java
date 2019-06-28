@@ -25,4 +25,5 @@ public class BaseTest {
     public URL getServiceUrl () {
         return service.getUrl();
     }
+    
 }
